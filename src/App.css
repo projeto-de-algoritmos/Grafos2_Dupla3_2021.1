@@ -1,0 +1,15 @@
+:root {
+    --baby-blue: #B1D4E0;
+    --dark-blue: #0C2D48;
+}
+
+html, body, .App {
+    background-color: var(--baby-blue);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Open Sans', sans-serif;
+    color: var(--dark-blue);
+    text-align: center;
+}
