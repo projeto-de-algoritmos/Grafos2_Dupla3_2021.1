@@ -1,12 +1,16 @@
-import './App.css';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import { GraphComponent } from './components/Graph';  
+
+import './App.css';
 
 function App() {
   return (
     <div>
-      <div className="App">
-        <h1>Shortest Path</h1>
-        <p style={{ width: '30%', minWidth: '300px', marginBottom: '5rem' }}>
+      <div className='App'>
+        <h1 style={{ marginBottom: '1rem', marginTop: '1rem' }}>Shortest Path</h1>
+        <p style={{ width: '60%', minWidth: '300px', maxWidth: '55rem', marginBottom: '1rem' }}>
           O propósito da aplicação é demonstrar visualmente a atuação do algoritmo de 
           Dijkstra num grafo direcionado com arestas ponderadas. O usuário pode escolher
           a origem e o destino do caminho e após um duplo clique no fundo branco do 
@@ -14,6 +18,7 @@ function App() {
         </p>
       </div>
       <GraphComponent />
+      <ToastContainer />
     </div>
   );
 }

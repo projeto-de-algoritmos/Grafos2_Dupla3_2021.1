@@ -13,3 +13,11 @@ html, body, .App {
     color: var(--dark-blue);
     text-align: center;
 }
+
+.vis-network {
+    border: 1px solid var(--dark-blue);
+}
+
+h1, p {
+    margin: 0;
+}
