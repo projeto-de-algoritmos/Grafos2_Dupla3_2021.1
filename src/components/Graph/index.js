@@ -121,11 +121,19 @@ export function GraphComponent() {
     // Paint path
     var x = target;
     if (explored[x] >= 0) {
-      // graph.nodes[x].color = "pink";
+      var cnt = 0;
+      while (x !== source) {
+        x = explored[x];
+        cnt++
+      }
+      cnt--;
+      x = target;
       while (x !== source) {
         x = explored[x];
         if (graph.nodes[x].color !== "red" && graph.nodes[x].color !== "blue") {
           graph.nodes[x].color = "#0C2D48";
+          graph.nodes[x].label = `${cnt--}`;
+          graph.nodes[x].font = "18px arial white";
         }
       }
       toast.dismiss();
@@ -151,6 +159,7 @@ export function GraphComponent() {
     if (clean) {
       for (var i = 0; i < adj.length; i++) {
         graph.nodes[i].color = "gray";
+        graph.nodes[i].label = "";
       }
       clean = false;
     }
