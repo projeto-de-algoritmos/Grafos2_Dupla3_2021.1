@@ -121,9 +121,6 @@ export function GraphComponent() {
     // Paint path
     var x = target;
     if (explored[x] >= 0) {
-      blue = false;
-      red = true;
-      clean = true;
       // graph.nodes[x].color = "pink";
       while (x !== source) {
         x = explored[x];
@@ -136,6 +133,10 @@ export function GraphComponent() {
     } else {
       toast.error("Não há caminho até o destino!");
     }
+
+    blue = false;
+    red = true;
+    clean = true;
 
     setState(({ graph, ...rest }) => {
       return {
